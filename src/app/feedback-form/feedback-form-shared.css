@@ -1,0 +1,206 @@
+/* src/app/feedback-form/feedback-form-shared.css */
+
+/* Card-like Sections */
+.card-background {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  margin-bottom: 20px; /* Space between sections */
+}
+
+/* General Form Section Styles */
+.form-section {
+    margin-bottom: 20px;
+}
+
+.question-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* 1-10 Rating Options */
+.rating-options-1-10 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rating-options-1-10 label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    min-width: 30px; /* Ensure labels are wide enough */
+}
+
+.rating-options-1-10 label:hover {
+    background-color: #f0f0f0;
+}
+
+.rating-options-1-10 input[type="radio"] {
+    margin-bottom: 5px;
+}
+
+.rating-options-1-10 input[type="radio"]:checked + span {
+    color: #1890ff; /* Highlight selected text */
+    font-weight: bold;
+}
+
+/* General Rating Grid */
+.rating-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(5, 1fr); /* Adjust column width based on image */
+    gap: 10px;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden; /* To handle border-radius with rows */
+}
+
+.grid-header {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    display: contents; /* Allows children to participate in grid without being a grid item */
+}
+
+.grid-header span {
+  display: block; /* Make spans act as block elements in the grid */
+  padding: 12px 10px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #eee;
+}
+.grid-header span:first-child { border-left: none; text-align: left;}
+.grid-header span:last-child { border-right: none;}
+
+
+.grid-row {
+    display: contents; /* Allows children to participate in grid without being a grid item */
+}
+
+.grid-row span {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    color: #555;
+    font-size: 15px;
+    word-wrap: break-word; /* Ensure text wraps if long */
+}
+.grid-row:last-child span {
+    border-bottom: none;
+}
+
+.grid-row label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.grid-row label:last-child {
+    border-right: none;
+}
+.grid-row:last-child label {
+    border-bottom: none;
+}
+
+
+.rating-grid input[type="radio"] {
+    /* Custom radio button styling if needed later */
+    accent-color: #1890ff; /* Changes the color of the radio button itself */
+    transform: scale(1.2); /* Slightly larger radio buttons */
+}
+
+/* Textareas */
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 100px;
+    box-sizing: border-box; /* Include padding in element's total width */
+    resize: vertical; /* Allow vertical resizing only */
+    font-family: Arial, sans-serif; /* Match overall font */
+}
+
+textarea::placeholder {
+    color: #aaa;
+}
+
+/* Form Actions (Buttons) */
+.form-actions {
+  display: flex;
+  justify-content: flex-start; /* Align to the left as per image */
+  gap: 15px;
+  padding: 10px 0; /* Some padding above/below buttons */
+  margin-top: 10px;
+}
+
+.submit-button,
+.clear-form-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.submit-button {
+  background-color: #1890ff; /* Blue color from design */
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #40a9ff;
+}
+
+.clear-form-button {
+  background-color: #f0f0f0; /* Light grey */
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.clear-form-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Basic Responsive Adjustments (for smaller screens) */
+@media (max-width: 768px) {
+  .rating-grid {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+  }
+  .grid-header, .grid-row span, .grid-row label {
+    border-right: none;
+    border-left: none;
+  }
+  .grid-header {
+    text-align: left;
+    padding: 8px 10px;
+  }
+  .grid-row label {
+    justify-content: flex-start; /* Align radio buttons to start */
+  }
+  .grid-header span:not(:first-child) {
+    display: none; /* Hide opinion headers on small screens */
+  }
+
+  .rating-options-1-10 label {
+    flex: 1 1 auto; /* Allow items to grow/shrink */
+    min-width: unset;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="page-container">
+  <app-header></app-header>
+
+  <main class="main-content">
+    <div class="feedback-container">
+      <app-feedback-form-header></app-feedback-form-header>
+
+      <app-trainers-info></app-trainers-info>
+
+      <section class="form-sections-container">
+        <app-recommendation-rating></app-recommendation-rating>
+
+        <app-overall-program-rating></app-overall-program-rating>
+
+        <app-facilitator-rating
+          [facilitatorName]="'Mr. Venkatesh Vatsa'"
+          [questions]="facilitator1Questions">
+        </app-facilitator-rating>
+
+        <app-facilitator-rating
+          [facilitatorName]="'Mr. Akash Gupta'"
+          [questions]="facilitator2Questions">
+        </app-facilitator-rating>
+
+        <app-question-text-area
+          [question]="'What aspects of this program did you like the best?'"
+          [placeholder]="'Type your answer here...'">
+        </app-question-text-area>
+
+        <app-question-text-area
+          [question]="'Share with us your key learning that you obtained from this program and how do you plan to apply it in your work.'"
+          [placeholder]="'Type your answer here...'">
+        </app-question-text-area>
+
+        <app-question-text-area
+          [question]="'Any suggestions for us to improve the program?'"
+          [placeholder]="'Type your answer here...'">
+        </app-question-text-area>
+
+        <app-form-actions
+          (submitForm)="onSubmitForm()"
+          (clearForm)="onClearForm()">
+        </app-form-actions>
+      </section>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

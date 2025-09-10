@@ -1,0 +1,6 @@
+/* src/app/feedback-form/facilitator-rating/facilitator-rating.component.css */
+@import '../feedback-form-shared.css'; /* Import shared styles */
+
+:host {
+  display: block; /* Important for component styles to apply correctly */
+}

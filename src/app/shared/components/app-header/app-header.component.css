@@ -1,0 +1,56 @@
+/* Content for app-header.component.css */
+:host {
+  display: block; /* Important for component styles to apply correctly */
+}
+
+.header-bar {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.ild-logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.product-name {
+  font-size: 16px;
+  color: #555;
+}
+
+.user-profile-section .icon {
+  margin-left: 20px;
+  font-size: 20px;
+  color: #777;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header-bar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

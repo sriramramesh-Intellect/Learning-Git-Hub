@@ -1,0 +1,6 @@
+/* src/app/feedback-form/recommendation-rating/recommendation-rating.component.css */
+@import '../feedback-form-shared.css'; /* <-- Add this line */
+
+:host {
+  display: block; /* Important for component styles to apply correctly */
+}

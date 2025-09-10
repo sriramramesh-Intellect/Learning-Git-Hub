@@ -1,0 +1,21 @@
+<div class="form-section card-background">
+    <p class="question-title">Based on the below statements, rate the facilitator ({{ facilitatorName }})</p>
+    <div class="rating-grid">
+        <div class="grid-header">
+            <span></span>
+            <span>Strongly Agree</span>
+            <span>Agree</span>
+            <span>Neutral</span>
+            <span>Disagree</span>
+            <span>Strongly Disagree</span>
+        </div>
+        <div class="grid-row" *ngFor="let question of questions">
+            <span>{{ question.text }}</span>
+            <label><input type="radio" [name]="question.name" value="stronglyAgree"></label>
+            <label><input type="radio" [name]="question.name" value="agree"></label>
+            <label><input type="radio" [name]="question.name" value="neutral"></label>
+            <label><input type="radio" [name]="question.name" value="disagree"></label>
+            <label><input type="radio" [name]="question.name" value="stronglyDisagree"></label>
+        </div>
+    </div>
+</div>

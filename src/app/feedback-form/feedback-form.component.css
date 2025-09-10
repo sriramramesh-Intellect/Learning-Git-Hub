@@ -1,0 +1,51 @@
+/* src/app/feedback-form/feedback-form.component.css */
+
+@import './feedback-form-shared.css'; /* <-- Add this line */
+
+/* General body and page container styles */
+:host {
+  display: block; /* Make the host component itself a block element */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Light grey background */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Content Area */
+.main-content {
+  flex-grow: 1; /* Allows main content to take up available space */
+  padding: 30px;
+  display: flex;
+  justify-content: center; /* Center the feedback container */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.feedback-container {
+  width: 100%;
+  max-width: 900px; /* Max width to control form width as per image */
+  background-color: #f0f2f5; /* Match page background */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Form Sections Container (still in feedback-form.component.html) */
+.form-sections-container {
+  margin-top: 20px;
+}
+
+/* Basic Responsive Adjustments (for smaller screens) */
+@media (max-width: 768px) {
+  .main-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
